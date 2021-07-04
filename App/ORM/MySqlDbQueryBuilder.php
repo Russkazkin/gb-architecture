@@ -11,7 +11,7 @@ class MySqlDbQueryBuilder extends BaseMySqlORM implements DbQueryBuilderInterfac
 
     public function getAll()
     {
-        // TODO: Implement getAll() method.
+        echo 'Получаю все файлы из таблицы в MySQL базе данных' . PHP_EOL;
     }
 
     public function getAllWhere()

@@ -11,7 +11,7 @@ class MysqlDbConnection extends BaseMySqlORM implements DbConnectionInterface
 
     public function connectionStatus()
     {
-        // TODO: Implement connectionStatus() method.
+        echo 'Этот сервис работает с MySQL' . PHP_EOL;
     }
 
     public function closeConnection()

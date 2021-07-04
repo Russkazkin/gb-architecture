@@ -16,7 +16,7 @@ class PostgreDbRecord extends BasePostgreORM implements DbRecordInterface
 
     public function insertOne()
     {
-        // TODO: Implement insertOne() method.
+        echo 'Добавляю запись в таблицу PostgreSQL базы данных' . PHP_EOL;
     }
 
     public function updateOne()

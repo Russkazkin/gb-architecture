@@ -11,7 +11,7 @@ class PostgreDbConnection extends BasePostgreORM implements DbConnectionInterfac
 
     public function connectionStatus()
     {
-        // TODO: Implement connectionStatus() method.
+        echo 'Этот сервис работает с PostgreSQL' . PHP_EOL;
     }
 
     public function closeConnection()

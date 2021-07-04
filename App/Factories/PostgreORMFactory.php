@@ -9,7 +9,6 @@ use Contracts\DbQueryBuilderInterface;
 use Contracts\DbRecordInterface;
 use Contracts\ORMFactoryInterface;
 use Db\PostgreSql;
-use ORM\MysqlDbConnection;
 use ORM\PostgreDbConnection;
 use ORM\PostgreDbQueryBuilder;
 use ORM\PostgreDbRecord;

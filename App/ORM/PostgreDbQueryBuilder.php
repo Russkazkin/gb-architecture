@@ -11,7 +11,7 @@ class PostgreDbQueryBuilder extends BasePostgreORM implements DbQueryBuilderInte
 
     public function getAll()
     {
-        // TODO: Implement getAll() method.
+        echo 'Получаю все файлы из таблицы в PostgreSQL базе данных' . PHP_EOL;
     }
 
     public function getAllWhere()

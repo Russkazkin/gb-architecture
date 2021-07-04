@@ -16,7 +16,7 @@ class MySqlDbRecord extends BaseMySqlORM implements DbRecordInterface
 
     public function insertOne()
     {
-        // TODO: Implement insertOne() method.
+        echo 'Добавляю запись в таблицу MySQL базы данных' . PHP_EOL;
     }
 
     public function updateOne()
