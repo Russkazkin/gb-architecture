@@ -6,7 +6,7 @@ namespace Contracts;
 
 interface DbConnectionInterface
 {
-    public function getConnection();
+    public function connectionStatus();
 
     public function closeConnection();
 }
