@@ -4,9 +4,12 @@
 namespace TASK8_4;
 
 
+use SplStack;
+use function MongoDB\BSON\toJSON;
+
 class Prime
 {
-    public array $primes = [];
+    public SplStack $primes;
     private int $num;
     private array $numArray = [];
 
@@ -16,9 +19,14 @@ class Prime
         return $this;
     }
 
+    public function __construct()
+    {
+        $this->primes = new SplStack();
+    }
+
     public function setNumArray(): Prime
     {
-        for ($i=2; $i<=$this->num; $i++) {
+        for ($i=2; $i<=sqrt($this->num); $i++) {
             $this->numArray[] = $i;
         }
         return $this;
@@ -29,7 +37,7 @@ class Prime
         if (count($this->numArray) === 0) {
             return $this;
         }
-        $this->primes[] = $this->numArray[0];
+        $this->primes->push($this->numArray[0]);
         $divider = $this->numArray[0];
         foreach ($this->numArray as $index => $item) {
             if ($item % $divider === 0) {
@@ -42,11 +50,12 @@ class Prime
     }
     public function getMaxPrime(): ?int
     {
-        $array = array_reverse($this->primes);
-        foreach ($array as $divider) {
-            if ($this->num % $divider === 0) {
-                return $divider;
+        $this->primes->rewind();
+        while ($this->primes->valid()) {
+            if ($this->num % $this->primes->current() === 0) {
+                return $this->primes->current();
             }
+            $this->primes->next();
         }
         return null;
     }
