@@ -18,8 +18,8 @@ echo "_______________________" . PHP_EOL;
 $explorer->printDirContent('FLB');
 
 echo 'Задание 4' . PHP_EOL;
-ini_set('memory_limit', '-1');
-ini_set('xdebug.max_nesting_level', '-1');
+//ini_set('memory_limit', '-1');
+//ini_set('xdebug.max_nesting_level', '-1');
 
 $service = new \TASK8_4\Prime();
 echo $service->setNum(600851475143)->setNumArray()->setPrimes()->getMaxPrime() . PHP_EOL;

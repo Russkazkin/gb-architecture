@@ -34,18 +34,19 @@ class Prime
 
     public function setPrimes(): Prime
     {
-        if (count($this->numArray) === 0) {
-            return $this;
-        }
-        $this->primes->push($this->numArray[0]);
-        $divider = $this->numArray[0];
-        foreach ($this->numArray as $index => $item) {
-            if ($item % $divider === 0) {
-                unset($this->numArray[$index]);
+        while ($this->numArray) {
+            if (count($this->numArray) === 0) {
+                return $this;
             }
+            $this->primes->push($this->numArray[0]);
+            $divider = $this->numArray[0];
+            foreach ($this->numArray as $index => $item) {
+                if ($item % $divider === 0) {
+                    unset($this->numArray[$index]);
+                }
+            }
+            $this->numArray = array_values($this->numArray);
         }
-        $this->numArray = array_values($this->numArray);
-        $this->setPrimes();
         return $this;
     }
     public function getMaxPrime(): ?int
