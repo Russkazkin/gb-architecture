@@ -15,7 +15,7 @@ include 'CombSort.php';
 
 function getArr(): array
 {
-	return _randArray(30000);
+	return _randArray(1000000);
 }
 
 $arr = getArr();
